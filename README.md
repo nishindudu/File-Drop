@@ -8,3 +8,8 @@ The server will only allow one download.
 - Simple web server to host the file
 - Single-use download links for enhanced security
 
+## Usage
+
+```bash
+./FileDrop.exe <file_path>
+```

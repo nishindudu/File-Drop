@@ -3,9 +3,16 @@ import http.server
 import argparse
 import socket
 
-argparse = argparse.ArgumentParser(description="Generate a QR code for a file download link.")
+argparse = argparse.ArgumentParser(description="Generate a QR code for a file download link.", exit_on_error=False)
 argparse.add_argument("file_url", type=str, help="The URL of the file to be downloaded.")
-args = argparse.parse_args()
+
+try:
+    args = argparse.parse_args()
+except SystemExit:
+    print("Error: Please provide a valid file URL.")
+    print("Press Enter to exit...")
+    input()
+    exit()
 
 filename = args.file_url
 
